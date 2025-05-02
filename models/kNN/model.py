@@ -135,8 +135,8 @@ class kNNModel(BaseModel):
             return "Model trained and saved successfully."
 
         except Exception as e:
+            raise TrainingException(f"Error during prediction: {str(e)}")
 
-            raise InternalException(f"Error during training")
 
 
     def predict(self, file: bytes) -> Dict[str, str]:
