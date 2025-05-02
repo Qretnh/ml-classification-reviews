@@ -43,5 +43,7 @@ async def predict(file: UploadFile = File(...)):
     try:
         content = await file.read()
         return model.predict(content)
+    except TrainingException as e:
+        return JSONResponse(status_code=400, content={"message": "Missing data for testing."})
     except Exception as e:
         return JSONResponse(status_code=500, content={"message": "Internal server error. Please try again later."})
