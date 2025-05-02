@@ -6,3 +6,8 @@ keras
 nltk
 huggingface
 environs
+pandas
+scikit-learn
+emoji
+transformers
+torch
