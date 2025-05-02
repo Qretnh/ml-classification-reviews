@@ -84,7 +84,8 @@ class RNNModel(BaseModel):
             return "RNN model trained and saved successfully."
 
         except Exception as e:
-            raise InternalException(f"Error during training: {str(e)}")
+            raise TrainingException(f"Error during prediction: {str(e)}")
+
 
     def predict(self, file: bytes) -> Dict[str, str]:
         try:
