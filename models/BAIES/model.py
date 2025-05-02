@@ -93,7 +93,7 @@ class NaiveBayesModel(BaseModel):
             return "Model trained and saved successfully."
 
         except Exception as e:
-            raise InternalException(f"Error during training: {e}")
+            raise TrainingException(f"Error during prediction: {str(e)}")
 
     def predict(self, file: bytes) -> Dict[str, str]:
         lines: List[str] = file.decode().splitlines()
